@@ -1,14 +1,28 @@
 'use strict'
 
-let f0 = 0
-console.log(f0)
-let f1 = 1
-console.log(f1)
+function golfScore(strokes, par){
 
-for(let i = 2; i<=10; i++){
-    let fi = f0 + f1
-    console.log(fi)
+    if(strokes == 1){
+        return "Hole-in-one!"
+    }
+    else if(strokes <= par -2){
+        return "Eagle"
+    }
+    else if(strokes == par -1){
+        return "Birdie"
+    }
+    else if(strokes == par){
+        return "Par"
+    }
+    else if(strokes == par +1 ){
+        return "Bogey"
+    }
+    else if(strokes == par + 2){
+        return "Double Bogey"
+    }
+    else if(strokes >= par +3){
+        return "Go Home!"
+    }
+};
 
-    f0 = f1
-    f1 = fi
-}
+console.log(golfScore(10,4));
